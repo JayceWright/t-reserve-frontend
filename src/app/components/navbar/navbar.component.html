@@ -1,0 +1,29 @@
+<header class="hud-header nav-frame animate-fade-in"
+        [class.nav-hidden]="isHidden"
+        [class.nav-glassy]="isScrolledOrSubpage">
+  <div class="logo-wrapper" (click)="isAdmin ? router.navigate(['/admin']) : goHome()">
+    <img src="/logo.png" alt="T Logo" class="logo-icon-img">
+    <span class="logo-text-reserve">Reserve</span>
+  </div>
+  
+  <div class="auth-wrapper">
+    <a *ngIf="isAdmin" class="nav-link" routerLink="/admin">
+      Панель управления
+    </a>
+    <a *ngIf="!isAdmin && isLoggedIn" class="nav-link" href="javascript:void(0)" (click)="goHome()">
+      События
+    </a>
+    
+    <button class="theme-toggle-btn" (click)="toggleTheme()" title="Toggle Theme">
+      {{ isLightTheme ? '🌙' : '☀️' }}
+    </button>
+    
+    <ng-container *ngIf="!isLoggedIn; else loggedInTpl">
+      <button class="signin-link" (click)="goLogin()">Sign in</button>
+    </ng-container>
+    <ng-template #loggedInTpl>
+      <span class="operator-status" (click)="goProfile()">Operator: {{ userName }}</span>
+      <button class="signin-link" (click)="logout()">Sign out</button>
+    </ng-template>
+  </div>
+</header>

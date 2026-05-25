@@ -1,0 +1,41 @@
+<section class="shell seat-page animate-fade-in" *ngIf="event">
+  <button class="back-link" [routerLink]="['/event', event.id]">← Назад к деталям</button>
+  
+  <div class="header-line">
+    <h1>Выбор мест</h1>
+    <div class="event-mini-info">
+      <span class="mini-title">{{ event.title }}</span>
+      <span class="mini-divider">•</span>
+      <span class="mini-date">{{ event.startTime | date:'d MMMM, HH:mm' }}</span>
+    </div>
+  </div>
+
+  <div class="board-card">
+    <app-seat-map
+      [groupedSeats]="groupedSeats"
+      [selectedSeatId]="selectedSeat?.seatId ?? null"
+      (seatSelected)="selectSeat($event)"
+    ></app-seat-map>
+  </div>
+
+  <div class="bottom-row">
+    <div class="selected-seat-details">
+      <span class="details-label">Выбранное место:</span>
+      <span class="details-value" *ngIf="selectedSeat">
+        {{ selectedSeat.seatLabel }} <span class="seat-price-chip">{{ selectedSeat.price }} ₽</span>
+      </span>
+      <span class="details-value empty" *ngIf="!selectedSeat">
+        Место не выбрано
+      </span>
+    </div>
+
+    <button
+      class="action-chip pay-button"
+      type="button"
+      [disabled]="!selectedSeat"
+      (click)="proceed()"
+    >
+      {{ isLoggedIn ? 'Перейти к оплате' : 'Войти для оплаты' }}
+    </button>
+  </div>
+</section>
