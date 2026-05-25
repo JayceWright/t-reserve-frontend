@@ -1,5 +1,5 @@
 .seat-page {
-  padding: 2rem 0 5rem;
+  padding: 8rem 0 5rem;
 }
 
 .back-link {
@@ -127,6 +127,9 @@
 }
 
 @media (max-width: 768px) {
+  .seat-page {
+    padding: 6rem 0 5rem;
+  }
   .bottom-row {
     flex-direction: column;
     align-items: stretch;

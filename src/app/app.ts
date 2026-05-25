@@ -135,6 +135,12 @@ export class App implements AfterViewInit, OnDestroy {
     let mouseMoved = false;
 
     this.mouseMoveListener = (e: MouseEvent): void => {
+      // Disable sparklers when interacting with the events catalog grid
+      const target = e.target as HTMLElement;
+      if (target.closest('.grid-list') || target.closest('.no-results')) {
+        return;
+      }
+
       const x = e.clientX;
       const y = e.clientY;
 
@@ -195,16 +201,18 @@ export class App implements AfterViewInit, OnDestroy {
       const currentScrollY = window.scrollY;
       const scrollDelta = currentScrollY - lastScrollY;
       
-      // Shift paths to match page scroll
-      for (let i = 0; i < mouseHistory.length; i++) {
-        mouseHistory[i].y -= scrollDelta;
-      }
-      for (let i = 0; i < sparkCount; i++) {
-        if (sparks[i].active) {
-          sparks[i].y -= scrollDelta;
+      if (window.innerWidth > 768) {
+        // Shift paths to match page scroll
+        for (let i = 0; i < mouseHistory.length; i++) {
+          mouseHistory[i].y -= scrollDelta;
         }
+        for (let i = 0; i < sparkCount; i++) {
+          if (sparks[i].active) {
+            sparks[i].y -= scrollDelta;
+          }
+        }
+        lastY -= scrollDelta;
       }
-      lastY -= scrollDelta;
       lastScrollY = currentScrollY;
     };
     window.addEventListener('scroll', this.scrollListener, { passive: true });
@@ -212,6 +220,11 @@ export class App implements AfterViewInit, OnDestroy {
     const sparklerStartTime = performance.now();
 
     const tickSparkler = (): void => {
+      if (window.innerWidth <= 768) {
+        this.sparklerAnimationFrameId = requestAnimationFrame(tickSparkler);
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const time = (performance.now() - sparklerStartTime) * 0.001;
 

@@ -5,12 +5,12 @@
 /* Hero Banner */
 .details-hero {
   position: relative;
-  min-height: 480px;
-  background-position: center;
+  min-height: 500px;
+  background-position: center 20%;
   background-size: cover;
   display: flex;
   align-items: flex-end;
-  padding: 4rem 0;
+  padding: 8rem 0 4rem; /* Top padding 8rem pushes content below fixed navbar */
   color: #ffffff;
 }
 
@@ -282,7 +282,7 @@
 @media (max-width: 768px) {
   .details-hero {
     min-height: 400px;
-    padding: 2rem 0;
+    padding: 6rem 0 2rem;
   }
   .hero-footer {
     gap: 1.5rem;

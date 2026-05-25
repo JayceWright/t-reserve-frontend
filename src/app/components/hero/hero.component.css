@@ -1,5 +1,6 @@
 :host {
-  --color-bg-primary: #050b0a; /* Deep tech green-black default */
+  --color-bg-primary: #050b0a;
+  /* Deep tech green-black default */
   --color-bg-panel: rgba(20, 25, 30, 0.45);
   --color-text-primary: #ffffff;
   --color-text-muted: rgba(255, 255, 255, 0.5);
@@ -8,41 +9,41 @@
   --color-accent-cyan: #4ce6c6;
   --color-accent-blue: #0088cc;
   --color-green: #3be68d;
-  
+
   --font-family-body: 'Outfit', -apple-system, sans-serif;
   --font-family-tech: 'Orbitron', monospace;
-  
+
   /* Background gradients and overlays */
   --bg-gradient: radial-gradient(circle at 30% 40%, #032d28 0%, #011210 100%);
   --bg-image: url('/bg-dark.png');
   --star-color: #ffffff;
   --star-opacity: 0.15;
   --grid-color: rgba(76, 230, 198, 0.015);
-  
+
   --glow-left-bg: radial-gradient(circle, rgba(12, 115, 101, 0.6) 0%, transparent 70%);
   --glow-right-bg: radial-gradient(circle, rgba(6, 64, 56, 0.7) 0%, transparent 70%);
   --glow-opacity: 0.22;
   --liquid-overlay-bg: radial-gradient(circle at 30% 50%, transparent 20%, rgba(1, 10, 8, 0.8) 80%);
-  
+
   /* Borders and shadows */
   --panel-border-top: rgba(255, 255, 255, 0.15);
   --panel-border-bottom: rgba(0, 0, 0, 0.2);
   --panel-shadow: rgba(0, 0, 0, 0.5);
   --panel-hover-shadow: rgba(76, 230, 198, 0.05);
   --panel-hover-border: rgba(76, 230, 198, 0.3);
-  
-  --visualizer-bg: rgba(0,0,0,0.15);
-  --visualizer-border: rgba(255,255,255,0.04);
+
+  --visualizer-bg: rgba(0, 0, 0, 0.15);
+  --visualizer-border: rgba(255, 255, 255, 0.04);
   --capacity-block-bg: rgba(255, 255, 255, 0.1);
   --capacity-block-shadow: rgba(207, 168, 86, 0.35);
-  
+
   --btn-gradient: linear-gradient(135deg, #cfa856 0%, #a67c2e 100%);
   --btn-color: #101514;
   --btn-shadow: rgba(166, 124, 46, 0.3);
   --btn-hover-shadow: rgba(207, 168, 86, 0.55);
-  
-  --cursor-glow-bg: radial-gradient(circle, rgba(76, 230, 198, 0.12) 0%, rgba(207, 168, 86, 0.03) 45%, rgba(0,0,0,0) 70%);
-  
+
+  --cursor-glow-bg: radial-gradient(circle, rgba(76, 230, 198, 0.12) 0%, rgba(207, 168, 86, 0.03) 45%, rgba(0, 0, 0, 0) 70%);
+
   display: block;
   position: relative;
   width: 100%;
@@ -51,7 +52,8 @@
 }
 
 :host-context(.light-theme) {
-  --color-bg-primary: #f4f3ea; /* Warm luxury cream background */
+  --color-bg-primary: #f4f3ea;
+  /* Warm luxury cream background */
   --color-bg-panel: rgba(255, 255, 255, 0.45);
   --color-text-primary: #2d3135;
   --color-text-muted: rgba(45, 49, 53, 0.6);
@@ -60,37 +62,37 @@
   --color-accent-cyan: #72ccb4;
   --color-accent-blue: #3d8bb5;
   --color-green: #3aa672;
-  
+
   /* Background gradients and overlays */
   --bg-gradient: radial-gradient(circle at 30% 40%, #f7f6f0 0%, #edece5 100%);
   --bg-image: url('/bg-light.png');
   --star-color: #2d3135;
   --star-opacity: 0.12;
   --grid-color: rgba(114, 204, 180, 0.035);
-  
+
   --glow-left-bg: radial-gradient(circle, rgba(220, 200, 255, 0.55) 0%, transparent 70%);
   --glow-right-bg: radial-gradient(circle, rgba(200, 245, 235, 0.55) 0%, transparent 70%);
   --glow-opacity: 0.45;
   --liquid-overlay-bg: radial-gradient(circle at 30% 50%, transparent 20%, rgba(244, 243, 234, 0.35) 80%);
-  
+
   /* Borders and shadows */
   --panel-border-top: rgba(255, 255, 255, 0.65);
   --panel-border-bottom: rgba(0, 0, 0, 0.05);
   --panel-shadow: rgba(166, 155, 140, 0.12);
   --panel-hover-shadow: rgba(255, 255, 255, 0.1);
   --panel-hover-border: rgba(255, 255, 255, 0.9);
-  
-  --visualizer-bg: rgba(255,255,255,0.4);
-  --visualizer-border: rgba(0,0,0,0.03);
+
+  --visualizer-bg: rgba(255, 255, 255, 0.4);
+  --visualizer-border: rgba(0, 0, 0, 0.03);
   --capacity-block-bg: rgba(45, 49, 53, 0.1);
   --capacity-block-shadow: rgba(188, 160, 92, 0.35);
-  
+
   --btn-gradient: linear-gradient(135deg, #d3b473 0%, #b59553 100%);
   --btn-color: #2a2924;
   --btn-shadow: rgba(181, 149, 83, 0.25);
   --btn-hover-shadow: rgba(181, 149, 83, 0.45);
-  
-  --cursor-glow-bg: radial-gradient(circle, rgba(220, 200, 255, 0.4) 0%, rgba(200, 245, 235, 0.15) 45%, rgba(0,0,0,0) 70%);
+
+  --cursor-glow-bg: radial-gradient(circle, rgba(220, 200, 255, 0.4) 0%, rgba(200, 245, 235, 0.15) 45%, rgba(0, 0, 0, 0) 70%);
 }
 
 /* ==========================================================================
@@ -113,7 +115,8 @@
   width: 100%;
   height: 100%;
   display: block;
-  pointer-events: auto; /* Enable mouse drag/rotations */
+  pointer-events: auto;
+  /* Enable mouse drag/rotations */
 }
 
 /* ==========================================================================
@@ -132,7 +135,8 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 49px 98px;
-  pointer-events: none; /* Click-through except panels */
+  pointer-events: none;
+  /* Click-through except panels */
 }
 
 /* HUD Main Core */
@@ -193,14 +197,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  pointer-events: auto; /* Re-enable pointer events */
+  pointer-events: auto;
+  /* Re-enable pointer events */
   transform: scale(0.9);
+  transform: translateX(6px);
   transform-origin: right center;
 }
 
 /* Precise Glass Panel */
 .glass-panel {
-  background: var(--color-bg-panel); 
+  background: var(--color-bg-panel);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--panel-border-top);
@@ -307,28 +313,32 @@
 }
 
 .wave-ring.ring-1 {
-  width: 66px; height: 66px;
+  width: 66px;
+  height: 66px;
   animation-delay: 0s;
   border-color: rgba(0, 255, 204, 0.45);
   box-shadow: 0 0 8px rgba(0, 255, 204, 0.2);
 }
 
 .wave-ring.ring-2 {
-  width: 66px; height: 66px;
+  width: 66px;
+  height: 66px;
   animation-delay: 0.9s;
   border-color: rgba(168, 92, 252, 0.4);
   box-shadow: 0 0 10px rgba(168, 92, 252, 0.2);
 }
 
 .wave-ring.ring-3 {
-  width: 66px; height: 66px;
+  width: 66px;
+  height: 66px;
   animation-delay: 1.8s;
   border-color: rgba(255, 0, 170, 0.35);
   box-shadow: 0 0 12px rgba(255, 0, 170, 0.15);
 }
 
 .wave-ring.ring-4 {
-  width: 66px; height: 66px;
+  width: 66px;
+  height: 66px;
   animation-delay: 2.7s;
   border-color: rgba(0, 255, 204, 0.25);
   box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
@@ -379,13 +389,23 @@
 }
 
 @keyframes orbitSpin1 {
-  0% { transform: rotateX(70deg) rotateY(15deg) rotateZ(0deg); }
-  100% { transform: rotateX(70deg) rotateY(15deg) rotateZ(360deg); }
+  0% {
+    transform: rotateX(70deg) rotateY(15deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(70deg) rotateY(15deg) rotateZ(360deg);
+  }
 }
 
 @keyframes orbitSpin2 {
-  0% { transform: rotateX(60deg) rotateY(-45deg) rotateZ(0deg); }
-  100% { transform: rotateX(60deg) rotateY(-45deg) rotateZ(360deg); }
+  0% {
+    transform: rotateX(60deg) rotateY(-45deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(60deg) rotateY(-45deg) rotateZ(360deg);
+  }
 }
 
 @keyframes coreBreathe {
@@ -393,6 +413,7 @@
     transform: scale(0.92);
     box-shadow: 0 0 15px rgba(168, 92, 252, 0.5), 0 0 5px rgba(0, 255, 204, 0.3);
   }
+
   100% {
     transform: scale(1.08);
     box-shadow: 0 0 30px rgba(168, 92, 252, 0.9), 0 0 15px rgba(0, 255, 204, 0.6);
@@ -583,6 +604,7 @@
   0% {
     transform: translate(0, 0) scale(1);
   }
+
   100% {
     transform: translate(60px, 40px) scale(1.1);
   }
@@ -594,9 +616,11 @@
     opacity: 0.9;
     filter: blur(0px);
   }
+
   60% {
     opacity: 0.6;
   }
+
   100% {
     transform: scale(2.8);
     opacity: 0;
@@ -619,9 +643,11 @@
   0% {
     transform: translate(-2%, -2%) scale(1.0) rotate(0deg);
   }
+
   50% {
     transform: translate(0%, 0%) scale(1.05) rotate(0.4deg);
   }
+
   100% {
     transform: translate(2%, 2%) scale(1.08) rotate(-0.4deg);
   }
@@ -634,6 +660,7 @@
   .ui-layer {
     padding: 24px 32px;
   }
+
   .main-title {
     font-size: 26px;
   }
@@ -655,6 +682,8 @@
   /* Show mobile nodes canvas */
   #mobile-nodes-canvas {
     display: block;
+    height: 180px;
+    margin: 8px auto;
   }
 
   .ui-layer {
@@ -668,10 +697,11 @@
 
   .hud-main {
     grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 80px;
-    margin-bottom: 40px;
+    gap: 12px;
+    margin-top: -20px;
+    margin-bottom: 20px;
     align-items: center;
+    justify-items: center;
   }
 
   .title-container {
@@ -692,6 +722,11 @@
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
+    gap: 12px;
+  }
+
+  .glass-panel {
+    padding: 16px 20px;
   }
 
   /* Compact header on mobile */

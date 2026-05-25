@@ -1,5 +1,5 @@
 .payment-page {
-  padding: 2rem 0 5rem;
+  padding: 8rem 0 5rem;
 }
 
 .back-button {
@@ -173,6 +173,9 @@
 }
 
 @media (max-width: 900px) {
+  .payment-page {
+    padding: 6rem 0 5rem;
+  }
   .payment-layout {
     grid-template-columns: 1fr;
     gap: 2rem;

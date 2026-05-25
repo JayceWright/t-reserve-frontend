@@ -1,6 +1,6 @@
 <article class="event-card animate-fade-in" (click)="openEvent()">
   <div class="event-poster-wrapper">
-    <div class="event-poster skeleton" [style.background-image]="event.imageUrl ? 'url(' + event.imageUrl + ')' : 'none'"></div>
+    <div class="event-poster skeleton" [ngClass]="'poster-bg-' + ((event.id % 6) + 1)"></div>
     <div class="date-badge">
       <span class="date-day">{{ event.startTime | date:'d' }}</span>
       <span class="date-month">{{ event.startTime | date:'LLL' }}</span>

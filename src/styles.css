@@ -453,8 +453,8 @@ body.light-theme ::-webkit-scrollbar-thumb {
   flex-shrink: 0;
   background: #020706;
   color: rgba(255, 255, 255, 0.6);
-  padding: 4rem 0 2rem;
-  margin-top: 5rem;
+  padding: 2rem 0 1rem; /* Cut in half from 4rem 0 2rem */
+  margin-top: 2.5rem; /* Cut in half from 5rem */
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -541,9 +541,36 @@ body.light-theme .app-footer {
     flex-direction: column;
     gap: 2rem;
   }
+  .footer-brand {
+    flex-basis: auto;
+  }
   .footer-links {
     gap: 2rem;
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   MOBILE PERFORMANCE OVERRIDES (YOUTUBE-LIKE SMOOTHNESS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Stop heavy background animation but keep the static image */
+  .background-layer {
+    animation: none !important;
+  }
+  /* Hide the 150px blur animated blobs and complex masks */
+  .stars, .cyber-grid, .wave-glow, .liquid-overlay {
+    display: none !important;
+  }
+
+  /* 2. Disable continuous 3D/pulse animations */
+  .skeleton, .wave-ring, .visualizer-core, .orbit-path {
+    animation: none !important;
+  }
+
+  /* Disable native gray highlight on Android Chrome to fix "turns gray" issue */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
   }
 }

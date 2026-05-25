@@ -16,7 +16,8 @@
   height: 100%;
 }
 
-.event-card:hover {
+.event-card:hover,
+:host(.is-pressed) .event-card {
   background: rgba(25, 30, 36, 0.95);
   border-color: rgba(76, 230, 198, 0.3); /* Cyan highlight on hover */
   box-shadow: 0 15px 35px rgba(0, 255, 204, 0.15);
@@ -218,4 +219,46 @@
 
 :host-context(.light-theme) .price-badge {
   color: #91773d; /* Dark gold price text */
+}
+
+/* Mock Poster Backgrounds */
+.poster-bg-1 { background: linear-gradient(135deg, #13171a 0%, #0a1118 100%); }
+.poster-bg-2 { background: linear-gradient(135deg, #1f132b 0%, #110918 100%); }
+.poster-bg-3 { background: linear-gradient(135deg, #0f1d24 0%, #061118 100%); }
+.poster-bg-4 { background: linear-gradient(135deg, #241b0f 0%, #150f06 100%); }
+.poster-bg-5 { background: linear-gradient(135deg, #150d1a 0%, #0c060f 100%); }
+.poster-bg-6 { background: linear-gradient(135deg, #0a141a 0%, #050a0d 100%); }
+
+@media (max-width: 768px) {
+  .event-card {
+    --active-bg: #232d36;
+    --active-border: rgba(76, 230, 198, 0.4);
+    
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #1c242b !important; /* Contrasting slate for dark theme */
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  :host-context(.light-theme) .event-card {
+    --active-bg: #ffffff;
+    --active-border: rgba(207, 168, 86, 0.5);
+
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+  .date-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+  :host-context(.light-theme) .date-badge {
+    background: rgba(45, 49, 53, 0.95) !important;
+  }
+  
+  .event-card:hover,
+  :host(.is-pressed) .event-card {
+    background: var(--active-bg) !important;
+    border-color: var(--active-border) !important;
+  }
 }
