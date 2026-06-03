@@ -202,16 +202,25 @@ export class App implements AfterViewInit, OnDestroy {
       const scrollDelta = currentScrollY - lastScrollY;
       
       if (window.innerWidth > 768) {
-        // Shift paths to match page scroll
-        for (let i = 0; i < mouseHistory.length; i++) {
-          mouseHistory[i].y -= scrollDelta;
-        }
-        for (let i = 0; i < sparkCount; i++) {
-          if (sparks[i].active) {
-            sparks[i].y -= scrollDelta;
+        const isHomePage = this.router.url.split('?')[0] === '/';
+        if (isHomePage) {
+          // Clear trails instantly to prevent jumping or freezing on main page scroll
+          mouseHistory.length = 0;
+          for (let i = 0; i < sparkCount; i++) {
+            sparks[i].active = false;
           }
+        } else {
+          // Shift paths to match page scroll on other pages
+          for (let i = 0; i < mouseHistory.length; i++) {
+            mouseHistory[i].y -= scrollDelta;
+          }
+          for (let i = 0; i < sparkCount; i++) {
+            if (sparks[i].active) {
+              sparks[i].y -= scrollDelta;
+            }
+          }
+          lastY -= scrollDelta;
         }
-        lastY -= scrollDelta;
       }
       lastScrollY = currentScrollY;
     };
