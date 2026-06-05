@@ -149,12 +149,13 @@
 
 .desc-card,
 .booking-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 28px;
-  border: 1px solid rgba(18, 19, 26, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 2.2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .desc-card h2,
@@ -163,13 +164,13 @@
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0 0 1.5rem;
-  color: var(--ink-900);
+  color: #1a1b1e;
 }
 
 .description-text {
   font-size: 1.05rem;
   line-height: 1.6;
-  color: var(--ink-700);
+  color: #3b424a;
   margin: 0 0 2rem;
   opacity: 0.9;
 }
@@ -178,7 +179,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  border-top: 1px solid rgba(18, 19, 26, 0.06);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 1.5rem;
 }
 
@@ -190,7 +191,7 @@
 
 .add-label {
   font-size: 0.85rem;
-  color: var(--muted-600);
+  color: #687076;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -199,13 +200,13 @@
 .add-val {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--ink-900);
+  color: #1a1b1e;
 }
 
 /* Booking Card & Sessions */
 .select-hint {
   font-size: 0.95rem;
-  color: var(--muted-600);
+  color: #687076;
   margin: 0 0 1.5rem;
 }
 
@@ -221,17 +222,23 @@
   align-items: center;
   padding: 1.2rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(18, 19, 26, 0.04);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .session-row:hover {
   transform: translateY(-2px);
-  background: #ffffff;
-  border-color: rgba(168, 162, 244, 0.3);
-  box-shadow: 0 8px 20px rgba(168, 162, 244, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(76, 230, 198, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+:host-context(.light-theme) .session-row:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(168, 162, 244, 0.5);
+  box-shadow: 0 8px 20px rgba(168, 162, 244, 0.15);
 }
 
 .session-date-info {
@@ -243,12 +250,12 @@
 .session-day {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--ink-900);
+  color: #1a1b1e;
 }
 
 .session-time {
   font-size: 0.88rem;
-  color: var(--muted-600);
+  color: #687076;
   text-transform: capitalize;
 }
 
@@ -262,7 +269,7 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--ink-900);
+  color: #1a1b1e;
 }
 
 .select-btn {
