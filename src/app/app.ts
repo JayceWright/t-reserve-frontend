@@ -227,6 +227,7 @@ export class App implements AfterViewInit, OnDestroy {
     window.addEventListener('scroll', this.scrollListener, { passive: true });
 
     const sparklerStartTime = performance.now();
+    let renderLastScrollY = window.scrollY;
 
     const tickSparkler = (): void => {
       if (window.innerWidth <= 768) {
@@ -236,6 +237,19 @@ export class App implements AfterViewInit, OnDestroy {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const time = (performance.now() - sparklerStartTime) * 0.001;
+
+      // Zero-latency check inside render loop: if we are actively scrolling, clear trails instantly
+      const currentScrollY = window.scrollY;
+      if (currentScrollY !== renderLastScrollY) {
+        const isHomePage = this.router.url.split('?')[0] === '/';
+        if (isHomePage) {
+          mouseHistory.length = 0;
+          for (let i = 0; i < sparkCount; i++) {
+            sparks[i].active = false;
+          }
+        }
+        renderLastScrollY = currentScrollY;
+      }
 
       for (let i = 0; i < mouseHistory.length; i++) {
         mouseHistory[i].age++;

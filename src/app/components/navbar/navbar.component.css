@@ -183,8 +183,11 @@
   }
 
   :host-context(.light-theme) .logo-wrapper:hover .logo-text-reserve {
-    color: var(--violet-700);
-    text-shadow: none;
+    color: transparent;
+    background-image: linear-gradient(135deg, var(--lime-400), var(--violet-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 4px 12px rgba(114, 204, 180, 0.25);
   }
 }
 

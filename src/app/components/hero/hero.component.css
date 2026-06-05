@@ -231,7 +231,7 @@
 }
 
 .glass-panel h3 {
-  font-family: var(--font-family-body);
+  font-family: var(--font-family-panel);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -255,6 +255,7 @@
 }
 
 .session-counter-bottom {
+  font-family: var(--font-family-panel);
   font-size: 12px;
   font-weight: 500;
   color: var(--color-text-muted);
@@ -422,6 +423,8 @@
 
 /* Panel 2 Next Event Content */
 .movie-title {
+  font-family: var(--font-family-panel);
+  font-weight: 400;
   font-size: 20px;
   color: var(--color-text-muted);
 }
@@ -455,6 +458,7 @@
 }
 
 .countdown-label {
+  font-family: var(--font-family-panel);
   font-size: 16px;
   color: var(--color-text-muted);
 }
@@ -488,8 +492,9 @@
 }
 
 .capacity-label {
+  font-family: var(--font-family-panel);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text-muted);
   white-space: nowrap;
 }

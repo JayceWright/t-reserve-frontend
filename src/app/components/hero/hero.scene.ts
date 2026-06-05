@@ -693,8 +693,10 @@ export class HeroScene {
 
       const mouseSpeed = Math.sqrt(this.mouseVelX * this.mouseVelX + this.mouseVelY * this.mouseVelY);
 
+      const isScrolled = window.scrollY > 150;
+
       // Emit sparkling stardust particles
-      if (elapsed > 1.0) {
+      if (elapsed > 1.0 && !isScrolled) {
         this.emitStardust(this.projectedCursor3D, this.mouseVelX, this.mouseVelY);
         
         if (mouseSpeed > 0.003) {
@@ -770,7 +772,9 @@ export class HeroScene {
 
       // Raycast proximity
       if (this.modelGroup.children.length > 0) {
-        if (this.mouseDirty && this.tickFrame % 3 === 0) {
+        if (isScrolled) {
+          this.isHovered = false;
+        } else if (this.mouseDirty && this.tickFrame % 3 === 0) {
           this.mouseDirty = false;
           this.raycaster.setFromCamera(this.mouseVector, this.camera);
           const intersects = this.raycaster.intersectObjects([this.hitSphere], false);
@@ -818,7 +822,10 @@ export class HeroScene {
           this.projectedCursor3D.z = Math.max(this.projectedCursor3D.z, 1.6);
           
           this.cursorLight.position.lerp(this.projectedCursor3D, 0.15);
-          this.cursorLight.intensity = 6.0;
+          
+          // Fade out the light smoothly when scrolled
+          const fade = Math.max(0, 1.0 - window.scrollY / 200.0);
+          this.cursorLight.intensity = 6.0 * fade;
           this.cursorLight.distance = 4.0;
           this.cursorLight.color.set('#00a892');
           
